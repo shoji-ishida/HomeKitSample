@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@import HomeKit;
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISwitch *light;
+@property (weak, nonatomic) IBOutlet UISlider *hue;
+@property (weak, nonatomic) IBOutlet UISlider *brightness;
+@property (weak, nonatomic) IBOutlet UISlider *saturation;
+@property (weak, nonatomic) IBOutlet UILabel *place;
 
+@property (nonatomic) HMAccessory * accessory;
 
+- (void)setAccessories;
+- (void)refresh;
 @end
 

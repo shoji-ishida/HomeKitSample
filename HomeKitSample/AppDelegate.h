@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@import HomeKit;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, HMHomeManagerDelegate, HMAccessoryBrowserDelegate, HMAccessoryDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

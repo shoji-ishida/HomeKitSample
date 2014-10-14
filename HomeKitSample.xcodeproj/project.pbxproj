@@ -13,6 +13,7 @@
 		623EBF12199866FB00E8BF34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 623EBF10199866FB00E8BF34 /* Main.storyboard */; };
 		623EBF14199866FB00E8BF34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 623EBF13199866FB00E8BF34 /* Images.xcassets */; };
 		623EBF20199866FB00E8BF34 /* HomeKitSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 623EBF1F199866FB00E8BF34 /* HomeKitSampleTests.m */; };
+		623EBF2A1998674000E8BF34 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623EBF291998674000E8BF34 /* HomeKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 		623EBF19199866FB00E8BF34 /* HomeKitSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeKitSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		623EBF1E199866FB00E8BF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		623EBF1F199866FB00E8BF34 /* HomeKitSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeKitSampleTests.m; sourceTree = "<group>"; };
+		623EBF291998674000E8BF34 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		623EBF2B1998674000E8BF34 /* HomeKitSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HomeKitSample.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				623EBF2A1998674000E8BF34 /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +65,7 @@
 		623EBEFA199866FB00E8BF34 = {
 			isa = PBXGroup;
 			children = (
+				623EBF291998674000E8BF34 /* HomeKit.framework */,
 				623EBF05199866FB00E8BF34 /* HomeKitSample */,
 				623EBF1C199866FB00E8BF34 /* HomeKitSampleTests */,
 				623EBF04199866FB00E8BF34 /* Products */,
@@ -79,6 +84,7 @@
 		623EBF05199866FB00E8BF34 /* HomeKitSample */ = {
 			isa = PBXGroup;
 			children = (
+				623EBF2B1998674000E8BF34 /* HomeKitSample.entitlements */,
 				623EBF0A199866FB00E8BF34 /* AppDelegate.h */,
 				623EBF0B199866FB00E8BF34 /* AppDelegate.m */,
 				623EBF0D199866FB00E8BF34 /* ViewController.h */,
@@ -165,6 +171,15 @@
 				TargetAttributes = {
 					623EBF02199866FB00E8BF34 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = M5SE2DP2CA;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					623EBF18199866FB00E8BF34 = {
 						CreatedOnToolsVersion = 6.0;
@@ -334,9 +349,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = HomeKitSample/HomeKitSample.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HomeKitSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -345,9 +364,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = HomeKitSample/HomeKitSample.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HomeKitSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
